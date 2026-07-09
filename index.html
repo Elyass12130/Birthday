@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Birthday.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,900&family=Tangerine:wght@400;700&display=swap"
+    rel="stylesheet">
+    <title>Happy Birthday, Parioo</title>
+</head>
+<body>
+  <div id="neon-cursor-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none; opacity: 0; transition: opacity 0.3s ease;"></div>
+
+  <!-- HERO SECTION -->
+    <section id="hero-page" class="page active">
+        <div id="particle-container"
+            style="position: absolute; width: 100%; height: 100%; top:0; left:0; pointer-events: none;"></div>
+        <h1 class="hero-title">Happy Birthday, Parioo</h1>
+        <p class="hero-sub">This is for u</p>
+        <button class="btn-neon" onclick="transitionTo('message-slider-page')">Click here</button>
+    </section>
+    <section id="message-slider-page" class="page">
+        <div id="slider-particles"
+            style="position: absolute; width: 100%; height: 100%; top:0; left:0; pointer-events: none;"></div>
+        <div class="slider-card">
+            <div id="step-1" class="step-content active">
+                <h2 class="step-text">It's Your Special Day</h2>
+                <button class="btn-neon" onclick="nextStep(2)">Next</button>
+            </div>
+            <div id="step-2" class="step-content">
+                <h2 class="step-text">I am so grateful to have you in my life</h2>
+                <button class="btn-neon" onclick="nextStep(3)">Next</button>
+            </div>
+            <div id="step-3" class="step-content">
+                <h2 class="step-text">Let's Celebrate!</h2>
+                <button class="btn-neon" onclick="finishSlider()">Let's Go</button>
+            </div>
+            <div class="slider-dots">
+                <div id="dot-1" class="dot active"></div>
+                <div id="dot-2" class="dot"></div>
+                <div id="dot-3" class="dot"></div>
+            </div>
+        </div>
+    </section>
+    <section id="celebration-page" class="page">
+        <div class="fairy-lights-container" id="fairy-lights-container">
+            <svg class="wire-svg" preserveAspectRatio="none" viewBox="0 0 1000 150">
+                <path id="wire-path" d="M0,20 Q100,60 200,20 T400,20 T600,20 T800,20 T1000,20" />
+            </svg>
+        </div>
+        <div class="glass-container" style="background: transparent; border: none; box-shadow: none;">
+            <h2 id="celeb-hint" style="font-size: 1.5rem; margin-bottom: 30px; letter-spacing: 2px;">The Stage is Set...</h2>
+            <button id="celeb-master-btn" class="btn-neon" onclick="celebFlow()">Turn On Lights</button>
+        </div>
+    </section>
+    <section id="curtain-page" class="page" style="padding: 0;">
+        <div class="stage" id="stage">
+            <div class="curtain-panel curtain-left"></div>
+            <div class="curtain-panel curtain-right"></div>
+            <div class="secret-content">
+                <div class="message-card" id="message-card">
+                    <div id="w"><canvas id="c"></canvas></div>
+                    <button id="next-page-btn" class="btn-neon btn-bottom" onclick="goToNextPage()" style="margin-top: 30px;">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="heart-page" class="page">
+        <canvas id="heart"></canvas>
+        <div class="smoke"> 
+        </div>
+    </section>
+    <audio id="birthday-audio" loop>
+        <source src="the_mountain-happy-birthday-508020.mp3" type="audio/mpeg">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
